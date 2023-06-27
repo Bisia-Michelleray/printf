@@ -26,7 +26,9 @@ int print_char(va_list ch);
 int print_str(va_list st);
 int print_mod(va_list args);
 int _puts(char *string);
-int print_integer(va_list digit);
-int print_decimal(va_list dec);
+int integer(int abs);
+int counts(int abs);
+int print_num(va_list num);
+int _absolute(int abs);
 
 #endif

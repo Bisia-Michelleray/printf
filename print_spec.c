@@ -17,8 +17,8 @@ int handle_spec(char c_s, va_list args)
 		{"c", print_char},
 		{"s", print_str},
 		{"%%", print_mod},
-		{"d", print_decimal},
-		{"i", print_integer},
+		{"d", print_num},
+		{"i", print_num},
 	};
 
 	while (m[i].spec)

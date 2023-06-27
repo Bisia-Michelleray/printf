@@ -1,48 +1,27 @@
 #include "main.h"
 
 /**
- * print_integer - handles conversion specifiers id
- * @digit: arguments to be passed
+ * integer - prints an integer
+ * @abs: integer to print
  *
- * Return: number of characters printed
+ * Return: integer printed
  */
 
-int print_integer(va_list digit)
+int integer(int abs)
 {
-	int a = va_arg(digit, int);
-	int i, actual;
-	int rem = a % 10;
-	int output = 1;
-	int wh_num;
+	int tmp;
+	unsigned int actual;
 
-	i = 1;
-	a = a / 10;
-	actual = a;
-	if (rem > 0)
+	tmp = counts(abs);
+	if (abs < 0)
 	{
-		while (actual / 10 != 0)
-		{
-			output = output * 10;
-			actual = actual / 10;
-		}
-		actual = a;
-		while (output > 0)
-		{
-			wh_num = actual / output;
-			_putchar(actual + '0');
-			actual -= (wh_num * output);
-			output = output / 10;
-			i++;
-		}
-		if (rem < 0)
-		{
-			_putchar('-');
-			actual = -actual;
-			a = -a;
-			rem = -rem;
-			i++;
-		}
+		_putchar('-');
+		actual = -abs;
 	}
-	_putchar(rem + '0');
-	return (i);
+	else if (abs > 0)
+		actual = abs;
+	if (actual >= 10)
+		integer(actual / 10);
+	_putchar(actual % 10 + '0');
+	return (tmp);
 }
