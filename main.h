@@ -30,5 +30,6 @@ int integer(int abs);
 int counts(int abs);
 int print_num(va_list num);
 int _absolute(int abs);
+int print_binary(va_list bin);
 
 #endif

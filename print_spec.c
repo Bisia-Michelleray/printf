@@ -19,6 +19,7 @@ int handle_spec(char c_s, va_list args)
 		{"%%", print_mod},
 		{"d", print_num},
 		{"i", print_num},
+		{"b", print_binary},
 	};
 
 	while (m[i].spec)
